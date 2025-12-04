@@ -73,9 +73,9 @@ MongoClient.connect(
   }
 );
 
-/* =========================
-   BASIC ROUTE
-========================= */
+                                /* =========================
+                                        BASIC ROUTE
+                                  ========================= */
 
 app.get('/', (request, response) => {
   response.send('Select a collection, e.g. /collection/lesson');
