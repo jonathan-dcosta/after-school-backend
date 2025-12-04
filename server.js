@@ -7,14 +7,14 @@ const ObjectID = require('mongodb').ObjectID;
 
 let db;
 
-/* =========================
-   MIDDLEWARE
-========================= */
+                            /* =========================
+                                      MIDDLEWARE
+                              ========================= */
 
-// Parse JSON bodies
+
 app.use(express.json());
 
-// CORS – as in coursework slides
+// LOGGER middleware: logs every incoming request with method and URL.
 app.use((request, response, next) => {
   response.setHeader('Access-Control-Allow-Origin', '*');
   response.setHeader('Access-Control-Allow-Credentials', 'true');
