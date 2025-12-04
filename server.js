@@ -10,11 +10,10 @@ let db;
                             /* =========================
                                       MIDDLEWARE
                               ========================= */
-
-
+                          
 app.use(express.json());
 
-// LOGGER middleware: logs every incoming request with method and URL.
+
 app.use((request, response, next) => {
   response.setHeader('Access-Control-Allow-Origin', '*');
   response.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -33,14 +32,14 @@ app.use((request, response, next) => {
   next();
 });
 
-// A. LOGGER middleware (for marks)
+// LOGGER middleware: logs every incoming request with method and URL.
 app.use((request, response, next) => {
   const now = new Date().toISOString();
   console.log(`[${now}] ${request.method} ${request.url}`);
   next();
 });
 
-// B. STATIC IMAGE middleware (for marks)
+//   STATIC IMAGE middleware
 //  - returns lesson images from /images
 //  - if the file does not exist, returns a JSON error
 app.use('/images', (request, response, next) => {
