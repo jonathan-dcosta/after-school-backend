@@ -55,11 +55,11 @@ app.use('/images', (request, response, next) => {
   });
 });
 
-/* =========================
-   MONGODB CONNECTION
-========================= */
+                                /* =========================
+                                     MONGODB CONNECTION
+                                  ========================= */
 
-// Use YOUR connection string here
+// Connection string
 MongoClient.connect(
   'mongodb+srv://Jonathan:Jonathan1508@cluster0.jjkjv3y.mongodb.net/after_school?retryWrites=true&w=majority&appName=Cluster0',
   { useUnifiedTopology: true },
