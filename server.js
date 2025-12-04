@@ -144,9 +144,9 @@ app.delete('/collection/:collectionName/:id', (request, response, next) => {
   );
 });
 
-/* =========================
-   COURSEWORK-SPECIFIC ROUTES
-========================= */
+                                /* =========================
+                                  COURSEWORK-SPECIFIC ROUTES
+                                  ========================= */
 
 // GET /lessons – all lessons (for marks)
 app.get('/lessons', (request, response, next) => {
@@ -184,9 +184,8 @@ app.put('/lessons/:id', (request, response, next) => {
   );
 });
 
-// SEARCH route – Back-End part of search (Approach 2)
-// You are currently using front-end filtering (Approach 1),
-// but this route is here so you can demonstrate it in Postman.
+
+// Front-end filtering (Approach 1),
 app.get('/search', (request, response, next) => {
   const q = request.query.q;
   if (!q) return response.json([]);
