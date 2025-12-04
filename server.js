@@ -81,9 +81,9 @@ app.get('/', (request, response) => {
   response.send('Select a collection, e.g. /collection/lesson');
 });
 
-/* =========================
-   GENERIC COLLECTION ROUTES
-========================= */
+                               /* =========================
+                                GET, POST , PUT AND DELETE
+                                ========================= */
 
 app.param('collectionName', (request, response, next, collectionName) => {
   request.collection = db.collection(collectionName);
