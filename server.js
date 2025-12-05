@@ -42,19 +42,8 @@ app.use((request, response, next) => {
 //   STATIC IMAGE middleware
 //  - returns lesson images from /images
 //  - if the file does not exist, returns a JSON error
-app.use('/images', (request, response, next) => {
-  const imagePath = path.join(__dirname, 'images', request.path);
-
-  fs.access(imagePath, fs.constants.F_OK, err => {
-    if (err) {
-      return response
-        .status(404)
-        .json({ message: 'Image not found: ' + request.path });
-    }
-    response.sendFile(imagePath);
-  });
-});
-
+// Serve all files in the 'images' folder efficiently
+app.use('/images', express.static(path.join(__dirname, 'images')));
                                 /* =========================
                                      MONGODB CONNECTION
                                   ========================= */
